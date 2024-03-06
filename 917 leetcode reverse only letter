@@ -1,0 +1,30 @@
+class Solution {
+public:
+    string reverseOnlyLetters(string s) {
+        
+        int l=0, h=s.size()-1;
+        //char ch;
+        while(l<h)
+        {
+            if( (s[l]>=97 && s[l]<=122) || (s[h]>=65 && s[h]<=90))
+            //if( (s[l]>='a' && s[l]<='z') || (s[h]>='A' && s[h]<='Z'))
+            //if((s[ch>=97 && ch<=122]) || (s[ch>=65 && ch<=90]))
+            //if(isalpha(s[l]) && isalpha(s[h]))
+            {
+                swap(s[l],s[h]);
+                l++;
+                h--;
+            }
+            // else if(!isalpha(s[l])){
+            //     l++;
+            // }
+             else if(!(s[l]>=97 && s[l]<=122) || (s[h]>=65 && s[h]<=90)){
+                l++;
+            }
+            else{
+                h--;
+            }
+        }
+        return s;
+    }
+};
